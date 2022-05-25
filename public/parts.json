@@ -1,0 +1,56 @@
+[
+    {
+        "_id": 1,
+        "name": "Motherboard for Intel",
+        "img": "https://i.ibb.co/hHNp6v7/MB-intel.jpg",
+        "description": "Model: H310M H, Chipset: Intel H310 Express, Intel Socket 1151 for 8th Gen Core Processors,2 x DIMM, Max. 32GB DDR4",
+        "order": 10,
+        "quantity": 10000,
+        "price": 89
+    },
+    {
+        "_id": 2,
+        "name": "Motherboard for AMD",
+        "img": "https://i.ibb.co/8PFwCrF/MB-AMD.jpg",
+        "description": "Model: GA-A320M-S2H, CPU: AMD Ryzen, Chipset: AMD A320, Memory: 2 x DDR4, Max 32 GB, 3 x PCI Express slots",
+        "order": 10,
+        "quantity": 8000,
+        "price": 75
+    },
+    {
+        "_id": 3,
+        "name": "16GB DDR5 RAM",
+        "img": "https://i.ibb.co/DrgKkSz/RAM.jpg",
+        "description": "MPN: GP-ARS32G52D5, Model: AORUS Memory DDR5, Size: 16GB, Frequency: DDR5-5200 MHz, Timing: 40-40-40-80 (XMP 5200MHz)",
+        "order": 10,
+        "quantity": 80000,
+        "price": 160
+    },
+    {
+        "_id": 4,
+        "name": "Power Supply",
+        "img": "https://i.ibb.co/Vvmtc2R/Power-Supply.jpg",
+        "description": "MPN: GP-P450B/PSU 450W/80+B, Model: Gigabyte P450B, OVP/OPP/SCP/UVP/OCP/OTP protection, 80 PLUS Bronze certified",
+        "order": 10,
+        "quantity": 100000,
+        "price": 30
+    },
+    {
+        "_id": 5,
+        "name": "Liquid CPU Cooler",
+        "img": "https://i.ibb.co/tbRpRHY/CPUcooler.jpg",
+        "description": "Model: AORUS WATERFORCE 240, New high-performance pump, AORUS ARGB lighting display, 330 degrees manual rotatable design",
+        "order": 10,
+        "quantity": 100000,
+        "price": 150
+    },
+    {
+        "_id": 6,
+        "name": "Graphics Card",
+        "img": "https://i.ibb.co/T0HvJx2/GPU.jpg",
+        "description": "MPN: GV-N730D3-2GI, Model: GeForce GT 730, Integrated with the first 2048MB DDR3 memory, Features Dual-Link DVI-D, HDMI, D-Sub",
+        "order": 10,
+        "quantity": 5000,
+        "price": 165
+    }
+]
