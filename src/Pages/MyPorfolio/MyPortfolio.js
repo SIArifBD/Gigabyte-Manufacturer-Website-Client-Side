@@ -14,6 +14,7 @@ const MyPortfolio = () => {
                             <div className="card-body items-center">
                                 <h2 className="card-title uppercase">Name: Md. Saiful Islam Arif</h2>
                                 <p>Email: si.arif.cse@gmail.com</p>
+                                <p>Address: House # 90, D.N. Road, Goalpara, Narayanganj.</p>
                             </div>
                         </div>
                     </div>

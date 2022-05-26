@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const Purchase = () => {
@@ -17,10 +18,32 @@ const Purchase = () => {
 
     const handleOrder = event => {
         event.preventDefault();
-        const address = event.target.address.value;
-        const phone = event.target.phone.value;
-        const orderQty = event.target.orderQty.value;
-        console.log(address, phone, orderQty);
+        const orderConfirm = {
+            productId: purchaseId,
+            product: product.name,
+            user: user.email,
+            name: user.displayName,
+            address: event.target.address.value,
+            phone: event.target.phone.value,
+            orderQty: event.target.orderQty.value
+        }
+        fetch('http://localhost:5000/order', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(orderConfirm)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    toast('Order is confirmed');
+                }
+                else {
+                    toast.error('Already you placed this order');
+                }
+                setProduct(null);
+            })
     };
 
     const handleDecrement = () => {
