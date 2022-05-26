@@ -7,6 +7,7 @@ import AddProduct from './Pages/Dashboard/Dashboard/AddProduct';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import ManageProducts from './Pages/Dashboard/Dashboard/ManageProducts';
 import MyOrder from './Pages/Dashboard/Dashboard/MyOrder';
+import Review from './Pages/Dashboard/Dashboard/Review';
 import Users from './Pages/Dashboard/Dashboard/Users';
 import Home from './Pages/Home/Home';
 import Purchase from './Pages/Home/Purchase';
@@ -31,6 +32,7 @@ function App() {
         <Route path='purchase/:purchaseId' element={<RequireAuth><Purchase /></RequireAuth>}></Route>
         <Route path='dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
           <Route index element={<MyOrder />}></Route>
+          <Route path='review' element={<Review />}></Route>
           <Route path='makeAdmin' element={<Users></Users>}></Route>
           <Route path='addProduct' element={<AddProduct />}></Route>
           <Route path='manageProduct' element={<ManageProducts />}></Route>

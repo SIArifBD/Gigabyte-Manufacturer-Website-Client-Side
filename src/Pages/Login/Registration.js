@@ -31,7 +31,7 @@ const Registration = () => {
         signInError = <p className='text-red-500'><small>{error?.message || googleError?.message || updateError?.message}</small></p>
     }
     if (token) {
-        navigate('/appointment');
+        navigate('/home');
     }
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
