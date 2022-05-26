@@ -43,9 +43,6 @@ const Purchase = () => {
                             <p>Minimum Order: {product.order} pcs</p>
                             <p>Available Quantity: {product.quantity} pcs</p>
                             <p>Price: ${product.price}</p>
-                            <div className="card-actions">
-                                <button className="btn btn-primary">Buy Now</button>
-                            </div>
                         </div>
                     </div>
                     <div className="divider lg:divider-horizontal">OR</div>

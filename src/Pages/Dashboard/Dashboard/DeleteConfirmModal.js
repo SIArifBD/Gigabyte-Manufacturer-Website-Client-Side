@@ -1,8 +1,8 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const DeleteConfirmModal = ({ deletingProduct, refetch, setDeletingProduct }) => {
-    const { name, email } = deletingProduct;
+const DeleteConfirmModal = ({ removeProducts, refetch, setRemoveProducts }) => {
+    const { name, description, email } = removeProducts;
     const handleConfirmDelete = () => {
         fetch(`http://localhost:5000/product/${email}`, {
             method: 'DELETE',
@@ -14,8 +14,8 @@ const DeleteConfirmModal = ({ deletingProduct, refetch, setDeletingProduct }) =>
             .then(data => {
                 console.log(data);
                 if (data.deletedCount) {
-                    toast.success(`Doctor: ${name} is deleted!!`)
-                    setDeletingProduct(null);
+                    toast.success(`Product: ${name} is deleted!!`)
+                    setRemoveProducts(null);
                     refetch();
                 }
             })
@@ -26,7 +26,7 @@ const DeleteConfirmModal = ({ deletingProduct, refetch, setDeletingProduct }) =>
             <div className='modal modal-bottom sm:modal-middle'>
                 <div className='modal-box'>
                     <h3 className='font-bold text-lg text-red-500'>Are you sure you want to delete ${name}!</h3>
-                    <p className='py-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dignissimos ex odio enim rerum corrupti aspernatur deleniti perspiciatis et voluptas.</p>
+                    <p className='py-4'>{description}</p>
                     <div className='modal-action'>
                         <label onClick={() => handleConfirmDelete()} htmlFor="delete-confirm-modal" className='btn btn-xs btn-error'>Delete</label>
                         <label htmlFor="delete-confirm-modal" className='btn btn-xs'>Cancel</label>
