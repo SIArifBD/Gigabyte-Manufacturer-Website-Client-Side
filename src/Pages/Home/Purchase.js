@@ -22,17 +22,18 @@ const Purchase = () => {
         event.preventDefault();
         const orderConfirm = {
             productId: purchaseId,
-            product: product.name,
-            user: user.email,
-            name: user.displayName,
-            address: event.target.address.value,
-            phone: event.target.phone.value,
-            orderQty: event.target.orderQty.value
+            product: product?.name,
+            user: user?.email,
+            name: user?.displayName,
+            address: event.target.address?.value,
+            phone: event.target.phone?.value,
+            orderQty: event.target.orderQty?.value
         }
         fetch('http://localhost:5000/order', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(orderConfirm)
         })
