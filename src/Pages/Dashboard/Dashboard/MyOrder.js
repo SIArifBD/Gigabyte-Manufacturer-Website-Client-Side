@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import DeleteConfirmOrder from './DeleteConfirmOrder';
 
 const MyOrder = () => {
     const [orders, setOrders] = useState([]);
@@ -30,7 +31,20 @@ const MyOrder = () => {
                 });
         }
     }, [user]);
-    const handleRemoveOrder = () => {
+    const handleRemoveOrder = id => {
+        const confirmDelete = window.confirm('Are you sure? You want to delete it.');
+        if (confirmDelete) {
+            const url = `http://localhost:5000/order/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    const remain = orders.filter(order => order._id !== id);
+                    setOrders(remain)
+                });
+        }
     }
     return (
         <div>
@@ -56,13 +70,13 @@ const MyOrder = () => {
                                 <th>{order.orderQty}</th>
                                 <th>
                                     <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>
-                                    {/* {(order.price && order.paid) && <div>
+                                    {(order.price && order.paid) && <div>
                                         <p><span className='text-success'>Paid</span></p>
-                                        <p>Transaction ID: <span className='text-success'>{order.transactionId}</span></p>
-                                    </div>} */}
+                                        <p>T-ID: <span className='text-success'>{order.transactionId}</span></p>
+                                    </div>}
                                 </th>
                                 <td>
-                                    <label onClick={() => handleRemoveOrder()} htmlFor="delete-confirm-modal" className='btn btn-xs btn-error'>Delete</label>
+                                    <label onClick={() => handleRemoveOrder(order._id)} htmlFor="delete-confirm-modal" className='btn btn-xs btn-error'>Delete</label>
                                 </td>
                             </tr>)
                         }
