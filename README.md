@@ -4,10 +4,10 @@
 This website name is Gigabyte which is based on manufacturing. Using this application you can buy wholesale product, you can show can show how much item quantity available, admin can upload new product, delete item. User give review, update own profile, product payment, order cancel, admin can make admin.    
 
 ### Live client site link: 
-https://smart-shop-8e8bb.web.app/
+https://gigabyte-d0ffc.web.app/
 
 ### Live server site link: 
-https://intense-depths-80254.herokuapp.com/
+https://still-tundra-79453.herokuapp.com/
 
 ### Features and functionality:
 1. Simple navbar
