@@ -16,7 +16,7 @@ const Review = () => {
             image: user?.image,
             email: user?.email
         }
-        fetch('http://localhost:5000/review', {
+        fetch('https://still-tundra-79453.herokuapp.com/review', {
             method: "POST",
             headers: {
                 'content-type': 'application/json',

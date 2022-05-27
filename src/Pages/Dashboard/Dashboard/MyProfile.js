@@ -10,7 +10,7 @@ const MyProfile = () => {
     const [user] = useAuthState(auth);
     const currentUser = user.email;
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch(`http://localhost:5000/user/${currentUser}`, {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch(`https://still-tundra-79453.herokuapp.com/user/${currentUser}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -45,7 +45,7 @@ const MyProfile = () => {
                         photoURL: image
                     }
                     //send to database
-                    fetch(`http://localhost:5000/user/${currentUser}`, {
+                    fetch(`https://still-tundra-79453.herokuapp.com/user/${currentUser}`, {
                         method: "PUT",
                         headers: {
                             'content-type': 'application/json',

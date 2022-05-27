@@ -9,7 +9,7 @@ import Loading from '../../SharedPage/Loading';
 const stripePromise = loadStripe('pk_test_51L29yQIfpiubdjV3kQlZxh9XCTgGSnDvs8bF9obyljfT18eHyvguwOl3E8O8vNl8fwQXElFH2zS9z6oC34YrP1xd00wCjPXsTV');
 const Payment = () => {
     const { id } = useParams();
-    const url = `http://localhost:5000/order/${id}`;
+    const url = `https://still-tundra-79453.herokuapp.com/order/${id}`;
 
     const { data: order, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',

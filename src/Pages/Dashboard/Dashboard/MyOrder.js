@@ -9,7 +9,7 @@ const MyOrder = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order?user=${user.email}`, {
+            fetch(`https://still-tundra-79453.herokuapp.com/order?user=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -32,7 +32,7 @@ const MyOrder = () => {
     const handleRemoveOrder = id => {
         const confirmDelete = window.confirm('Are you sure? You want to delete it.');
         if (confirmDelete) {
-            const url = `http://localhost:5000/order/${id}`;
+            const url = `https://still-tundra-79453.herokuapp.com/order/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

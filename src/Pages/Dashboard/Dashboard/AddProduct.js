@@ -28,7 +28,7 @@ const AddProduct = () => {
                         img: image
                     }
                     //send to database
-                    fetch('http://localhost:5000/product', {
+                    fetch('https://still-tundra-79453.herokuapp.com/product', {
                         method: "POST",
                         headers: {
                             'content-type': 'application/json',

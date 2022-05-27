@@ -14,7 +14,7 @@ const Purchase = () => {
 
     useEffect(() => {
         if (purchaseId !== undefined) {
-            const url = `http://localhost:5000/product/${purchaseId}`;
+            const url = `https://still-tundra-79453.herokuapp.com/product/${purchaseId}`;
             fetch(url).then(res => res.json()).then(data => setProduct(data));
         }
     }, [purchaseId]);
@@ -31,7 +31,7 @@ const Purchase = () => {
             phone: event.target.phone?.value,
             orderQty: event.target.orderQty?.value
         }
-        fetch('http://localhost:5000/order', {
+        fetch('https://still-tundra-79453.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
