@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
-import DeleteConfirmOrder from './DeleteConfirmOrder';
-
 const MyOrder = () => {
     const [orders, setOrders] = useState([]);
     const [user] = useAuthState(auth);
