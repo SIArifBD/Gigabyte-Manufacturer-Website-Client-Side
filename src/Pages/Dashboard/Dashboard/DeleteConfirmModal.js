@@ -1,10 +1,12 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const DeleteConfirmModal = ({ removeProducts, refetch, setRemoveProducts }) => {
-    const { name, description, email } = removeProducts;
+    const id = useParams();
+    const { name, description } = removeProducts;
     const handleConfirmDelete = () => {
-        fetch(`http://localhost:5000/product/${email}`, {
+        fetch(`http://localhost:5000/product/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

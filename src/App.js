@@ -19,6 +19,7 @@ import MyPortfolio from './Pages/MyPorfolio/MyPortfolio';
 import Footer from './Pages/SharedPage/Footer';
 import Navbar from './Pages/SharedPage/Navbar';
 import NotFound from './Pages/SharedPage/NotFound';
+import Payment from './Pages/Dashboard/Dashboard/Payment';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path='dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
           <Route index element={<MyOrder />}></Route>
           <Route path='review' element={<Review />}></Route>
+          <Route path='payment/:id' element={<Payment />}></Route>
           <Route path='makeAdmin' element={<RequireAdmin><Users /></RequireAdmin>}></Route>
           <Route path='addProduct' element={<RequireAdmin><AddProduct /></RequireAdmin>}></Route>
           <Route path='manageProduct' element={<RequireAdmin><ManageProducts /></RequireAdmin>}></Route>

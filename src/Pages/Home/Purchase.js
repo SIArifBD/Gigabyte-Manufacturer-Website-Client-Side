@@ -8,6 +8,7 @@ import auth from '../../firebase.init';
 const Purchase = () => {
     const { purchaseId } = useParams();
     const [product, setProduct] = useState({});
+    console.log('product', product);
     const [user] = useAuthState(auth);
     // const { register, formState: { errors } } = useForm();
 
@@ -23,6 +24,7 @@ const Purchase = () => {
         const orderConfirm = {
             productId: purchaseId,
             product: product?.name,
+            price: product?.price,
             user: user?.email,
             name: user?.displayName,
             address: event.target.address?.value,
@@ -45,7 +47,7 @@ const Purchase = () => {
                 else {
                     toast.error('Already you placed this order');
                 }
-                setProduct(null);
+                // setProduct(null);
             })
     };
     return (
