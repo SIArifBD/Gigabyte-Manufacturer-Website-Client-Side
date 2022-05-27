@@ -1,9 +1,30 @@
-# Getting Started with Create React App
+# Website Name: Gigabyte Manufacturer Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Short Description: 
+This website name is Gigabyte which is based on manufacturing. Using this application you can buy wholesale product, you can show can show how much item quantity available, admin can upload new product, delete item. User give review, update own profile, product payment, order cancel, admin can make admin.    
 
-## Available Scripts
+### Live client site link: 
+https://smart-shop-8e8bb.web.app/
 
-In the project directory, you can run:
+### Live server site link: 
+https://intense-depths-80254.herokuapp.com/
 
-### `npm start`
+### Features and functionality:
+1. Simple navbar
+2. Simple banner
+3. Manufacturing items that showing maximum 6 items
+4. Purchase product
+5. Update your own profile
+
+### Tools and Libraries:
+1. VS Code.
+2. React Router.
+3. React firebase hooks.
+4. firebase.
+5. Tousitfy.
+6. Tailwind(DaisyUI).
+7. Modal
+8. MongoDB.
+9. react-hook-form.
+10. react-query.
+11. Strip(for payment )
